@@ -15,6 +15,18 @@ class WeatherIntegrationTests: XCTestCase {
         //Then
         XCTAssertNotNil(isLuckyNumber)        
     }
+
+    func test2() async {
+        
+        let myLibrary = MyLibrary(weatherService: WeatherServiceImpl(baseUrl: .realapi))
+        
+        //When
+        let isLuckyNumber = await myLibrary.isLucky(0)
+        
+        //Then
+        XCTAssertNotNil(isLuckyNumber)
+        
+    }
  
     
 }
